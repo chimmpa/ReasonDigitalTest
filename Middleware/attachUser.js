@@ -1,11 +1,13 @@
 const jwtDecode = require('jwt-decode');
-//Get User data from token
+// Get User data from token
 module.exports = (req, res, next) => {
     const token = req.headers.authorization;
+    // Check for a token
     if(!token) {
       return res.status(401).json({ message: 'Authentication invalid'});
     }
     
+    // Decode and log token data
     const decodedToken = jwtDecode(token);
     
     if(!decodedToken){

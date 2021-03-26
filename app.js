@@ -1,10 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 
 const app = express();
 
-//configure body parser to json
-app.use(bodyParser.json());
+//configure express to json
+app.use(express.json());
 
 //Setup the routes 
 const dinoRoutes = require('./Routes/DinoRoutes');
